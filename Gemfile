@@ -16,6 +16,8 @@ group :development, :test do
     gem 'byebug'
     gem 'pry-byebug'
   end
+
+  gem 'timecop'
 end
 
 # Specify non-special dependencies in oauth2.gemspec

@@ -244,4 +244,28 @@ RSpec.describe AccessToken do
       expect(access_token.to_hash).to eq(hash)
     end
   end
+
+  describe 'adhoc issue#520 expires_latency seems doesnt work' do
+    before { Timecop.freeze(Time.at(1595061900)) }
+    after { Timecop.return }
+
+    it 'deduce expires_latency' do
+      properties = {
+        expires_latency: 180,
+        expires_in: 900 # or expires_at: Time.zone.now.to_i + 900
+      }
+
+      client = OAuth2::Client.new(
+        'client_id',
+        'client_secret',
+        site: 'https://example.com',
+        token_url: '/sample',
+        auth_scheme: :basic_auth,
+      )
+
+      token = OAuth2::AccessToken.from_hash(client, properties)
+
+      expect(token.expires_at).to eq(1595062620)
+    end
+  end
 end

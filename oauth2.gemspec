@@ -49,4 +49,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rspec-block_is_expected'
   spec.add_development_dependency 'silent_stream'
   spec.add_development_dependency 'wwtd'
+
+  spec.add_development_dependency 'timecop'
 end
