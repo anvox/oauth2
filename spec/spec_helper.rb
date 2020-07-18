@@ -2,6 +2,7 @@ require 'bundler/setup'
 require 'oauth2'
 require 'helper'
 require 'rspec/pending_for'
+require 'timecop'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
