@@ -22,7 +22,7 @@ group :test do
       # see: https://github.com/danger/danger/issues/1349
       # gem 'danger', '~> 8.4'
       gem 'rubocop', '~> 1.22', require: false
-      gem 'rubocop-md', '~> 1.0', require: false
+      gem 'rubocop-md', '~> 2.0', require: false
       gem 'rubocop-packaging', '~> 0.5', require: false
       gem 'rubocop-performance', '~> 1.11', require: false
       gem 'rubocop-rake', '~> 0.6', require: false
